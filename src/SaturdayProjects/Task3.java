@@ -37,6 +37,14 @@ public class Task3 {
         String currentURL = driver.getCurrentUrl();
         System.out.println("Current URL: " + currentURL);
 
+        WebElement clickHomePage = driver.findElement(By.cssSelector("img[title='Snapdeal'][class='notIeLogoHeader aspectRatioEqual sdLogo cur-pointer']"));
+        clickHomePage.click();
+
+        String currentURL2 = driver.getCurrentUrl();
+        System.out.println("Current URL: " +currentURL2);
+
+
+
         driver.navigate().back();
 
 
