@@ -1,4 +1,4 @@
-package SaturdayProjects;
+package SaturdayProjects.FirstProject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
