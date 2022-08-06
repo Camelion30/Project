@@ -56,10 +56,12 @@ public class Part1 {
         WebElement zeroInCart = driver.findElement(By.xpath("(//span[@id='cart_item_nos'])[2]"));
         String zeroCartValidation = zeroInCart.getText();
         System.out.println("zero Cart Validation: " + zeroCartValidation);
-        if (zeroCartValidation.equals(cartItemRemove)) {
-            System.out.println("Pass");
-        } else {
-            System.out.println("Fail");
-        }
+            if (zeroCartValidation.equals(cartItemRemove)) {
+                System.out.println("Pass");
+            } else {
+                System.out.println("Fail");
+            }
     }
 }
+
+

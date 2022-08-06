@@ -18,6 +18,7 @@ public class Part4 {
         String input3 ="9999999999";
         String input4 ="helloWorldLLC";
 
+
         System.setProperty("webdriver.chrome.driver", "/Users/omersari/Desktop/selenium-java-4/chromedriver");
         WebDriver driver = new ChromeDriver();
 
@@ -50,15 +51,31 @@ public class Part4 {
         phone.sendKeys(input3);
         companyName.sendKeys(input4);
 
-        WebElement iFrame2 =driver.findElement(By.cssSelector("iframe[name='__privateStripeMetricsController9440']"));
-        wait.until(ExpectedConditions.visibilityOf(iFrame2));
-        driver.switchTo().frame(iFrame2);
+        WebElement iFrameCard = driver.findElement(By.xpath("//*[@id='Stripe-Element']/div/iframe"));
 
-        //------------not working after this point---------------
-       // Thread.sleep(3000);
-        WebElement creditCard =driver.findElement(By.cssSelector("div[class='CardField-input-wrapper is-ready-to-slide']"));
-        String input5 ="1111-1111-1111-1111";
-        creditCard.sendKeys(input5);
+        wait.until(ExpectedConditions.visibilityOf(iFrameCard));
+
+        driver.switchTo().frame(iFrameCard);
+
+        WebElement ccNumber =driver.findElement(By.cssSelector("input[class='InputElement is-empty Input Input--empty']"));
+        ccNumber.sendKeys("1111 1111 1111 1111");
+
+        WebElement exDate =driver.findElement(By.cssSelector("input[placeholder='MM / YY']"));
+        exDate.sendKeys("22/4");
+
+        WebElement CvcInput = driver.findElement(By.name("cvc"));
+        CvcInput.sendKeys("123");
+
+
+
+        Thread.sleep(4000);
+        driver.switchTo().parentFrame();
+
+       WebElement invalidCardText = driver.findElement(By.xpath("//span[text()='Your card number is invalid.']"));
+       invalidCardText.getText();
+       boolean isDisplayed = invalidCardText.isDisplayed();
+       System.out.println(isDisplayed);
+
 
 
 
