@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="TestNG">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Desktop/TestNG" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$USER_HOME$/Desktop/TestNG" recursive="false" />
+  </library>
+</component>
