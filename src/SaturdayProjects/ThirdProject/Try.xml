@@ -1,0 +1,8 @@
+<suite name = "anil-123">
+    <test name="Login In Test">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="SaturdayProjects.ThirdProject.Test._01_LoginTest"></class>
+        </classes>
+    </test>
+</suite>
